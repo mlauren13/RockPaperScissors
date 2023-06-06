@@ -2,19 +2,32 @@ function getComputerChoice(){
     let choices=['Rock','Paper', 'Scissors']
     return choices[Math.floor(Math.random()*choices.length)];
 }
+function getPlayerChoice(){
+    let playerSelection = prompt("Rock, Paper, or Scissors?")
+}
 function rockPaperScissors(playerSelection, computerSelection){
-    if (playerSelection.toLowerCase()=== computerSelection.toLowerase()){
-        return "You tied!";
+    computerSelection = getComputerChoice().toLowerCase;
+    playerSelection = playerSelection.toLowerCase;
+
+
+    if(
+        (computerSelection === 'rock' && playerSelection === 'scissors') ||
+        (computerSelection === 'paper' && playerSelection === 'rock') ||
+        (computerSelection === 'scissors' && playerSelection === 'paper')
+        ) {
+            return ("Computer wins!");
+        }
+    else if(
+        (computerSelection === 'rock' && playerSelection ==='paper') ||
+        (computerSelection === 'paper' && playerSelection === 'scissors') ||
+        (computerSelection === 'scissors' && playerSelection === 'rock')
+    ) {
+        return ("Player wins!");
     }
-    else if (playerSelection.toLowerCase()==='rock' && computerSelection.toLowerCase()==='paper'){
-        return "You lose! Paper beats Rock.";
+    else if(computerSelection===playerSelection) {
+        return ("It's a tie!");
     }
-    else if (playerSelection.toLowerCase()==='paper' && computerSelection.toLowerCase()==='scissors'){
-        return "You lose! Scissors beats Paper.";
-    }
-    else if (playerSelection.toLowerCase()==='scissors' && computerSelection.toLowerCase()==='rock'){
-        
-    }
+    
 }
 
 
